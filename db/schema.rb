@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160406144401) do
+ActiveRecord::Schema.define(version: 20160406145119) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -465,7 +465,7 @@ ActiveRecord::Schema.define(version: 20160406144401) do
   add_index "spree_product_properties", ["property_id"], name: "index_spree_product_properties_on_property_id", using: :btree
 
   create_table "spree_products", force: :cascade do |t|
-    t.string   "name",                                         default: "",      null: false
+    t.string   "name",                                                 default: "",      null: false
     t.text     "description"
     t.datetime "available_on"
     t.datetime "deleted_at"
@@ -474,29 +474,61 @@ ActiveRecord::Schema.define(version: 20160406144401) do
     t.string   "meta_keywords"
     t.integer  "tax_category_id"
     t.integer  "shipping_category_id"
-    t.datetime "created_at",                                                     null: false
-    t.datetime "updated_at",                                                     null: false
-    t.boolean  "promotionable",                                default: true
+    t.datetime "created_at",                                                             null: false
+    t.datetime "updated_at",                                                             null: false
+    t.boolean  "promotionable",                                        default: true
     t.string   "meta_title"
-    t.string   "weight",                                       default: "Blank"
-    t.string   "image_url",                                    default: "Blank"
-    t.string   "pack",                                         default: "Blank"
-    t.string   "keywords",                                     default: "Blank"
-    t.string   "page",                                         default: "Blank"
-    t.decimal  "avg_rating",           precision: 7, scale: 5, default: 0.0,     null: false
-    t.integer  "reviews_count",                                default: 0,       null: false
-    t.boolean  "sale",                                         default: false
-    t.boolean  "featured",                                     default: false
-    t.boolean  "latest",                                       default: false
-    t.string   "address",                                      default: "none"
-    t.string   "email",                                        default: "none"
-    t.string   "mailer",                                       default: "none"
-    t.string   "phone",                                        default: "none"
-    t.string   "twitter",                                      default: "none"
-    t.string   "facebook",                                     default: "none"
-    t.string   "linkedin",                                     default: "none"
-    t.string   "spicers_account_code",                         default: "blank"
-    t.string   "vow_account_code",                             default: "blank"
+    t.string   "weight",                                               default: "Blank"
+    t.string   "image_url",                                            default: "Blank"
+    t.string   "pack",                                                 default: "Blank"
+    t.string   "keywords",                                             default: "Blank"
+    t.string   "page",                                                 default: "Blank"
+    t.decimal  "avg_rating",                   precision: 7, scale: 5, default: 0.0,     null: false
+    t.integer  "reviews_count",                                        default: 0,       null: false
+    t.boolean  "sale",                                                 default: false
+    t.boolean  "featured",                                             default: false
+    t.boolean  "latest",                                               default: false
+    t.string   "address",                                              default: "none"
+    t.string   "email",                                                default: "none"
+    t.string   "mailer",                                               default: "none"
+    t.string   "phone",                                                default: "none"
+    t.string   "twitter",                                              default: "none"
+    t.string   "facebook",                                             default: "none"
+    t.string   "linkedin",                                             default: "none"
+    t.string   "spicers_account_code",                                 default: "blank"
+    t.string   "vow_account_code",                                     default: "blank"
+    t.string   "short_description"
+    t.string   "sku"
+    t.string   "brand_name"
+    t.string   "kit_flag"
+    t.string   "superseded_to"
+    t.string   "alternative_group"
+    t.string   "cat_page_no"
+    t.string   "mini_cat_page_no"
+    t.string   "manufacturer_name"
+    t.string   "manufacturer_acc_no"
+    t.string   "manufacturer_code"
+    t.string   "traded_pack_bar_code"
+    t.string   "depth"
+    t.string   "width"
+    t.string   "height"
+    t.string   "spicer_xref"
+    t.string   "boss_code"
+    t.string   "major_group"
+    t.string   "minor_group"
+    t.string   "trade_price"
+    t.string   "retail_to_trade"
+    t.string   "vat_code"
+    t.string   "product_matrix"
+    t.string   "cat_price_discount"
+    t.string   "status_code"
+    t.string   "nett_price_indicator"
+    t.string   "product_returnable"
+    t.string   "customer_logistics_lead_time"
+    t.string   "dealer_logistics_lead_time"
+    t.string   "delta_status"
+    t.string   "status_description"
+    t.string   "nett_cost"
   end
 
   add_index "spree_products", ["available_on"], name: "index_spree_products_on_available_on", using: :btree
