@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160302165352) do
+ActiveRecord::Schema.define(version: 20160406144401) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -478,37 +478,13 @@ ActiveRecord::Schema.define(version: 20160302165352) do
     t.datetime "updated_at",                                                     null: false
     t.boolean  "promotionable",                                default: true
     t.string   "meta_title"
-    t.string   "live",                                         default: "Blank"
-    t.string   "sell",                                         default: "Blank"
-    t.string   "page_yield",                                   default: "Blank"
-    t.string   "colour",                                       default: "Blank"
     t.string   "weight",                                       default: "Blank"
-    t.string   "barcode",                                      default: "Blank"
-    t.string   "box_size",                                     default: "Blank"
-    t.string   "short_oem_code",                               default: "Blank"
-    t.string   "daily_stock",                                  default: "Blank"
-    t.string   "min",                                          default: "Blank"
-    t.string   "max",                                          default: "Blank"
     t.string   "image_url",                                    default: "Blank"
-    t.string   "oem_code",                                     default: "Blank"
     t.string   "pack",                                         default: "Blank"
-    t.string   "vow_oem_code",                                 default: "Blank"
-    t.string   "spicers_oem_code",                             default: "Blank"
-    t.string   "vow_compat_code",                              default: "Blank"
-    t.string   "spicers_compat_code",                          default: "Blank"
-    t.string   "brand",                                        default: "Blank"
-    t.string   "manufacturer",                                 default: "Blank"
-    t.string   "category",                                     default: "Blank"
-    t.string   "chip_issue",                                   default: "Blank"
-    t.string   "machine_models",                               default: "Blank"
     t.string   "keywords",                                     default: "Blank"
-    t.string   "product_type",                                 default: "Blank"
-    t.string   "group",                                        default: "Blank"
     t.string   "page",                                         default: "Blank"
-    t.string   "ts_code",                                      default: "Blank"
     t.decimal  "avg_rating",           precision: 7, scale: 5, default: 0.0,     null: false
     t.integer  "reviews_count",                                default: 0,       null: false
-    t.string   "machine_models2",                              default: "Blank"
     t.boolean  "sale",                                         default: false
     t.boolean  "featured",                                     default: false
     t.boolean  "latest",                                       default: false
