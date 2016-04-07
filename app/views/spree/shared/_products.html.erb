@@ -34,7 +34,7 @@
 
 
         <% cache(@taxon.present? ? [I18n.locale, current_currency, @taxon, product] : [I18n.locale, current_currency, product]) do %>
-          <div class="col-sm-6 col-md-4">
+          <div class="col-sm-6 col-md-3">
             <div class="thumbnail">
               <%= link_to image_tag('http://www.op-insight.co.uk/images/product/large/' + product.image_url + '.jpg'), product %>
               <div class="caption">
