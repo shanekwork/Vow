@@ -1,3 +1,16 @@
+<script>
+  $('ul.dropdown-menu [data-toggle=dropdown]').on('click', function(event) {
+    // Avoid following the href location when clicking
+    event.preventDefault(); 
+    // Avoid having the menu to close when clicking
+    event.stopPropagation(); 
+    // Re-add .open to parent sub-menu item
+    $(this).parent().addClass('open');
+    $(this).parent().find("ul").parent().find("li.dropdown").addClass('open');
+});
+
+</script>
+
 <div id="header-top">
 	<div class="container">
 
@@ -63,6 +76,80 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
+
+
+      <style>
+
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu>.dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -6px;
+    margin-left: -1px;
+    -webkit-border-radius: 0 6px 6px 6px;
+    -moz-border-radius: 0 6px 6px;
+    border-radius: 0 6px 6px 6px;
+}
+
+.dropdown-submenu:hover>.dropdown-menu {
+    display: block;
+}
+
+.dropdown-submenu>a:after {
+    display: block;
+    content: " ";
+    float: right;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 5px 0 5px 5px;
+    border-left-color: #ccc;
+    margin-top: 5px;
+    margin-right: -10px;
+}
+
+.dropdown-submenu:hover>a:after {
+    border-left-color: #fff;
+}
+
+.dropdown-submenu.pull-left {
+    float: none;
+}
+
+.dropdown-submenu.pull-left>.dropdown-menu {
+    left: -100%;
+    margin-left: 10px;
+    -webkit-border-radius: 6px 0 6px 6px;
+    -moz-border-radius: 6px 0 6px 6px;
+    border-radius: 6px 0 6px 6px;
+}
+      </style>
+
+      <li class="dropdown">
+            <a id="dLabel" role="button" data-toggle="dropdown"  data-target="#" href="/page.html">
+                Dropdown <span class="caret"></span>
+            </a>
+        <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+        <% Spree::Taxonomy.where(id: [17, 16, 12, 18, 13, 21, 20, 15, 19, 30, 31, 32]).each do |t| %>
+          <li class="dropdown-submenu">
+            <a tabindex="-1" href="#"><%= link_to t.name, '#' %></a>
+            <ul class="dropdown-menu">
+              <li class="dropdown-submenu">
+                <a href="#">Even More..</a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">3rd level</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        <% end %>
+        </ul>
+      </li>
+
 
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Office Supplies <span class="caret"></span></a>
@@ -195,3 +282,6 @@
   </div><!-- /.container-fluid -->
 </nav>
 </div>
+
+
+
