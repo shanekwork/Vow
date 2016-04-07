@@ -40,7 +40,7 @@
               <div class="caption">
                 <h4><%= link_to truncate(product.name, length: 60), url, class: 'info', itemprop: "name", title: product.name %></h4>
                 <span itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                  <p><button style="text-align:centre" class="price selling lead btn btn-primary" itemprop="price"><%= display_price(product) %></button></p>
+                  <p class="text-center"><button class="price selling lead btn btn-primary" itemprop="price"><%= display_price(product) %></button></p>
                 </span>
               </div>
             </div>
