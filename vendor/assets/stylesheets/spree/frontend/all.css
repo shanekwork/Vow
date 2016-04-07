@@ -279,6 +279,10 @@ img#credit-card-image.pull-right {
 	max-width: 220px !important;
 }
 
+.makeItRed {
+	color: #ec4445;
+}
+
 .payment-info img {
 	max-width: 50px !important;
 }
