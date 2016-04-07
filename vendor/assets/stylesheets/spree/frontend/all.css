@@ -279,7 +279,7 @@ img#credit-card-image.pull-right {
 	max-width: 220px !important;
 }
 
-.makeItRed {
+h4.makeItRed a {
 	color: #ec4445;
 }
 
