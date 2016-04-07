@@ -25,21 +25,33 @@
   <div id="products" class="row" data-hook>
     <% products.each do |product| %>
       <% url = spree.product_url(product, taxon_id: @taxon.try(:id)) %>
+
       <div id="product_<%= product.id %>" class="col-md-3 col-sm-6 product-list-item" data-hook="products_list_item" itemscope itemtype="https://schema.org/Product">
-        <div class="panel panel-default">
-          <% cache(@taxon.present? ? [I18n.locale, current_currency, @taxon, product] : [I18n.locale, current_currency, product]) do %>
-            <div class="panel-body text-center product-body">
-              
+
+
+
+
+
+        <div class="row">
+        <% cache(@taxon.present? ? [I18n.locale, current_currency, @taxon, product] : [I18n.locale, current_currency, product]) do %>
+          <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
               <%= link_to image_tag('http://www.op-insight.co.uk/images/product/large/' + product.image_url + '.jpg'), product %>
-              <%= link_to truncate(product.name, length: 60), url, class: 'info', itemprop: "name", title: product.name %>
+              <div class="caption">
+                <h3><%= link_to truncate(product.name, length: 60), url, class: 'info', itemprop: "name", title: product.name %></h3>
+                <span itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                  <span class="price selling lead" itemprop="price"><%= display_price(product) %></span>
+                </span>
+              </div>
             </div>
-            <div class="panel-footer text-center">
-              <span itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                <span class="price selling lead" itemprop="price"><%= display_price(product) %></span>
-              </span>
-            </div>
-          <% end %>
+          </div>
+        <% end %>
         </div>
+
+
+
+
+
       </div>
     <% end %>
     <% reset_cycle("classes") %>
