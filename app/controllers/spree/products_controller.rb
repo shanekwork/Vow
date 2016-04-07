@@ -20,7 +20,7 @@ module Spree
 
 
     def show
-	  @imageProds = "http://ts.liveofficedata.co.uk/" + @product.image_url
+	   @imageProds = "http://www.op-insight.co.uk/images/product/large/" + @product.image_name + ".jpg"
       @variants = @product.variants_including_master.active(current_currency).includes([:option_values, :images])
       @product_properties = @product.product_properties.includes(:property)
       @taxon = Spree::Taxon.find(params[:taxon_id]) if params[:taxon_id]
