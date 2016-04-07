@@ -32,7 +32,7 @@
 
 
 
-        <div class="row">
+
         <% cache(@taxon.present? ? [I18n.locale, current_currency, @taxon, product] : [I18n.locale, current_currency, product]) do %>
           <div class="col-sm-6 col-md-4">
             <div class="thumbnail">
@@ -46,7 +46,7 @@
             </div>
           </div>
         <% end %>
-        </div>
+
 
 
 
