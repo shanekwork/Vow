@@ -13,7 +13,7 @@
 <h2 style="text-align:center">Home Specials</h2>
 
 <div class="clearfix" style="text-align:center;background:#5799d8;padding:1% 0;color:#fff;margin:1% 0;">
-  <div style="float:left;width:25%;">Sku</div>
+
   <div style="float:left;width:35%;">Name</div>
   <div style="float:left;width:20%;">Price</div>
   <div style="float:left;width:20%;">Link</div>
@@ -21,7 +21,7 @@
 
   <% @products.where(sale: true).each do |e| %>
       <div style="text-align:center;margin-bottom:1%;" class="clearfix;">
-        <div style="float:left;width:25%;"><%= e.sku %></div>
+        
         <div style="float:left;width:35%;"><%= truncate(e.name, length: 100) %></div>
         <div style="float:left;width:20%;">€<%= e.price %></div>
         <div style="float:left;width:20%;"><%= link_to "Show", admin_product_path( e.id ) %></div>
@@ -36,7 +36,6 @@
 <h2 style="text-align:center">Featured</h2>
 
 <div class="clearfix" style="text-align:center;background:#5799d8;padding:1% 0;color:#fff;margin:1% 0;">
-  <div style="float:left;width:25%;">Sku</div>
   <div style="float:left;width:35%;">Name</div>
   <div style="float:left;width:20%;">Price</div>
   <div style="float:left;width:20%;">Link</div>
@@ -45,7 +44,6 @@
   <% @products.where(featured: true).each do |e| %>
 
       <div style="text-align:center;margin-bottom:1%;" class="clearfix;">
-        <div style="float:left;width:25%;"><%= e.sku %></div>
         <div style="float:left;width:35%;"><%= truncate(e.name, length: 100) %></div>
         <div style="float:left;width:20%;">€<%= e.price %></div>
         <div style="float:left;width:20%;"><%= link_to "Show", admin_product_path( e.id ) %></div>
@@ -61,7 +59,6 @@
 <h2 style="text-align:center">Latest</h2>
 
 <div class="clearfix" style="text-align:center;background:#5799d8;padding:1% 0;color:#fff;margin:1% 0;">
-  <div style="float:left;width:25%;">Sku</div>
   <div style="float:left;width:35%;">Name</div>
   <div style="float:left;width:20%;">Price</div>
   <div style="float:left;width:20%;">Link</div>
@@ -70,7 +67,6 @@
   <% @products.where(latest: true).each do |e| %>
 
       <div style="text-align:center;margin-bottom:1%;" class="clearfix;">
-        <div style="float:left;width:25%;"><%= e.sku %></div>
         <div style="float:left;width:35%;"><%= truncate(e.name, length: 100) %></div>
         <div style="float:left;width:20%;">€<%= e.price %></div>
         <div style="float:left;width:20%;"><%= link_to "Show", admin_product_path( e.id ) %></div>
