@@ -182,10 +182,10 @@
           <% end %>
         </div>
         
-        <%= f.field_container :ts_code do %>
-	      <%= f.label :ts_code, raw(Spree.t(:ts_code)) %><br>
-	      <%= f.text_field :ts_code, :class => 'fullwidth title' %>
-	      <%= f.error_message_on :ts_code %>
+        <%= f.field_container :sku do %>
+	      <%= f.label :sku, raw(Spree.t(:sku)) %><br>
+	      <%= f.text_field :sku, :class => 'fullwidth title' %>
+	      <%= f.error_message_on :sku %>
 		 <% end %><br>
 
         <div data-hook="admin_product_form_promotionable">
