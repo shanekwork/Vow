@@ -109,7 +109,7 @@ task :xmlord => :environment do
             xml.OrderLine do
               xml.LineNumbers p.id
               xml.Product do
-                xml.SuppliersProductCode p.product.ts_code
+                xml.SuppliersProductCode p.product.sku
                 xml.Description p.product.name
               end
               xml.Quantity do
