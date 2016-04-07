@@ -1,0 +1,12 @@
+<h1 class="taxon-title"><%= @taxon.name %></h1>
+
+
+
+
+<% unless params[:keywords].present? %>
+  <div data-hook="taxon_children">
+    <% cache [I18n.locale, @taxon] do %>
+      <%= render partial: 'taxon', collection: @taxon.children %>
+    <% end %>
+  </div>
+<% end %>
