@@ -124,8 +124,7 @@
         <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
         <% Spree::Taxonomy.where(id: [17, 16, 12, 18, 13, 21, 20, 15, 19, 30, 31, 32]).each do |t| %>
           <li class="dropdown-submenu">
-            <a tabindex="-1" href="#"><%= link_to t.name, '#' %></a>
-
+            <%= link_to t.name, '#' %>
             <ul class="dropdown-menu">
             <% t.taxons.each do |taxon| %>
               <li class="dropdown-submenu">
