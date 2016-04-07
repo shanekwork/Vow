@@ -160,113 +160,112 @@
         </ul>
       </li>
 
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Ink &amp; Toner <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <% Spree::Taxonomy.where(id: [43]).each do |t| %>
-              <li>
-                <%= link_to t.name, '#' %>
-                <ul>
-                  <% t.taxons.each do |taxon| %>
-                  <li>
-                    <%= link_to taxon.name, nested_taxons_path(taxon.permalink) %>                  
-                  </li>
-                  <% end %>
-                </ul>
+      <li class="dropdown">
+            <a id="dLabel" role="button" data-toggle="dropdown"  data-target="#" href="/page.html">
+                Paper <span class="caret"></span>
+            </a>
+        <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+        <% Spree::Taxonomy.where(id: [10]).each do |t| %>
+          <li class="dropdown-submenu">
+            <%= link_to t.name, '#' %>
+            <ul class="dropdown-menu">
+            <% t.taxons.each do |taxon| %>
+              <li class="dropdown-submenu">
+                <%= link_to taxon.name, nested_taxons_path(taxon.permalink) %>
               </li>
             <% end %>
-          </ul>
-        </li><!--li class dropdown-->
+            </ul>
+
+          </li>
+        <% end %>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+            <a id="dLabel" role="button" data-toggle="dropdown"  data-target="#" href="/page.html">
+                Post &amp; Packaging <span class="caret"></span>
+            </a>
+        <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+        <% Spree::Taxonomy.where(id: [11, 63]).each do |t| %>
+          <li class="dropdown-submenu">
+            <%= link_to t.name, '#' %>
+            <ul class="dropdown-menu">
+            <% t.taxons.each do |taxon| %>
+              <li class="dropdown-submenu">
+                <%= link_to taxon.name, nested_taxons_path(taxon.permalink) %>
+              </li>
+            <% end %>
+            </ul>
+
+          </li>
+        <% end %>
+        </ul>
+      </li>
 
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Paper <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <% Spree::Taxonomy.where(id: [10]).each do |t| %>
-              <li>
-              <%= link_to t.name, '#' %>
-                <ul>
-                  <% t.taxons.each do |taxon| %>
-                    <li>
-                      <%= link_to taxon.name, nested_taxons_path(taxon.permalink) %>                  
-                    </li>
-                  <% end %>
-                </ul>
+            <a id="dLabel" role="button" data-toggle="dropdown"  data-target="#" href="/page.html">
+                Machines <span class="caret"></span>
+            </a>
+        <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+        <% Spree::Taxonomy.where(id: [42, 40, 41, 44, 50, 51, 83]).each do |t| %>
+          <li class="dropdown-submenu">
+            <%= link_to t.name, '#' %>
+            <ul class="dropdown-menu">
+            <% t.taxons.each do |taxon| %>
+              <li class="dropdown-submenu">
+                <%= link_to taxon.name, nested_taxons_path(taxon.permalink) %>
               </li>
             <% end %>
-          </ul>
-        </li><!--li class dropdown-->
+            </ul>
 
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Post &amp; Packaging <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <% Spree::Taxonomy.where(id: [11, 63]).each do |t| %>
-              <li>
-                <%= link_to t.name, '#' %>
-                <ul>
-                    <% t.taxons.each do |taxon| %>
-                      <li>
-                        <%= link_to taxon.name, nested_taxons_path(taxon.permalink) %>                  
-                      </li>
-                    <% end %>
-                </ul>
-              </li>
-            <% end %>
-          </ul>
-        </li><!--li class dropdown-->
+          </li>
+        <% end %>
+        </ul>
+      </li>
 
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Machines <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <% Spree::Taxonomy.where(id: [42, 40, 41, 44, 50, 51, 83]).each do |t| %>
-              <li>
-          <%= link_to t.name, '#' %>
-                <ul>
-                    <% t.taxons.each do |taxon| %>
-                      <li>
-                        <%= link_to taxon.name, nested_taxons_path(taxon.permalink) %>                  
-                      </li>
-                    <% end %>
-                </ul>
+      <li class="dropdown">
+            <a id="dLabel" role="button" data-toggle="dropdown"  data-target="#" href="/page.html">
+                Facilities <span class="caret"></span>
+            </a>
+        <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+        <% Spree::Taxonomy.where(id: [70, 61, 71, 62]).each do |t| %>
+          <li class="dropdown-submenu">
+            <%= link_to t.name, '#' %>
+            <ul class="dropdown-menu">
+            <% t.taxons.each do |taxon| %>
+              <li class="dropdown-submenu">
+                <%= link_to taxon.name, nested_taxons_path(taxon.permalink) %>
               </li>
             <% end %>
-          </ul>
-        </li><!--li class dropdown-->
+            </ul>
 
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Facilities <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <% Spree::Taxonomy.where(id: [70, 61, 71, 62]).each do |t| %>
-              <li>
-                <%= link_to t.name, '#' %>
-                <ul>
-                    <% t.taxons.each do |taxon| %>
-                      <li>
-                        <%= link_to taxon.name, nested_taxons_path(taxon.permalink) %>                  
-                      </li>
-                    <% end %>
-                </ul>
-              </li>
-            <% end %>
-          </ul>
-        </li><!--li class dropdown-->
+          </li>
+        <% end %>
+        </ul>
+      </li>
 
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Furniture <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <% Spree::Taxonomy.where(id: [60]).each do |t| %>
-              <li>
-                <%= link_to t.name, '#' %>
-                <ul>
-                    <% t.taxons.each do |taxon| %>
-                      <li>
-                        <%= link_to taxon.name, nested_taxons_path(taxon.permalink) %>                  
-                      </li>
-                    <% end %>
-                </ul>
+      <li class="dropdown">
+            <a id="dLabel" role="button" data-toggle="dropdown"  data-target="#" href="/page.html">
+                Furniture <span class="caret"></span>
+            </a>
+        <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+        <% Spree::Taxonomy.where(id: [60]).each do |t| %>
+          <li class="dropdown-submenu">
+            <%= link_to t.name, '#' %>
+            <ul class="dropdown-menu">
+            <% t.taxons.each do |taxon| %>
+              <li class="dropdown-submenu">
+                <%= link_to taxon.name, nested_taxons_path(taxon.permalink) %>
               </li>
             <% end %>
-          </ul>
-        </li><!--li class dropdown-->
+            </ul>
+
+          </li>
+        <% end %>
+        </ul>
+      </li>
+        
+
 
       </ul>
     </div><!-- /.navbar-collapse -->
